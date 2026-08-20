@@ -23,13 +23,13 @@ export default function WelcomeScreen({
       <View style={styles.content}>
         <View style={styles.brandArea}>
           <Image
-            source={require("../assets/branding/nexus-symbol.png")}
+            source={require("../assets/branding/nexus-symbol.jpg")}
             style={styles.symbol}
             resizeMode="contain"
           />
 
           <Image
-            source={require("../assets/branding/nexus-wordmark.png")}
+            source={require("../assets/branding/nexus-wordmark.jpg")}
             style={styles.wordmark}
             resizeMode="contain"
           />
