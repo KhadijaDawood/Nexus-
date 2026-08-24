@@ -1,0 +1,6 @@
+import React from "react";
+import { Pressable, StyleSheet, Text } from "react-native";
+import { colors, radius } from "../constants/theme";
+type AnswerOptionProps = { label: string; text: string; selected: boolean; onPress: () => void };
+export default function AnswerOption({ label, text, selected, onPress }: AnswerOptionProps) { return <Pressable onPress={onPress} style={({ pressed }) => [styles.option, selected && styles.selected, pressed && styles.pressed]}><Text style={styles.text}><Text style={styles.label}>{label}.</Text> {text}</Text>{selected && <Text style={styles.check}>✓</Text>}</Pressable>; }
+const styles = StyleSheet.create({ option: { minHeight: 88, marginBottom: 16, paddingHorizontal: 28, paddingVertical: 18, flexDirection: "row", alignItems: "center", borderWidth: 8, borderColor: colors.border, borderRadius: radius.lg, backgroundColor: colors.white }, selected: { borderColor: colors.primary, backgroundColor: colors.softAccent }, pressed: { opacity: 0.8 }, text: { flex: 1, fontSize: 20, lineHeight: 26, color: colors.deepInk }, label: { fontWeight: "700" }, check: { marginLeft: 12, fontSize: 34, color: colors.primary } });

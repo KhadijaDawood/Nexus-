@@ -60,8 +60,9 @@ type Styles = {
 
 const styles = StyleSheet.create<Styles>({
   base: {
-    minHeight: 52,
-    paddingHorizontal: 24,
+    minHeight: 92,
+    minWidth: 310,
+    paddingHorizontal: 32,
     borderRadius: radius.lg,
     alignItems: "center",
     justifyContent: "center",
@@ -82,12 +83,13 @@ const styles = StyleSheet.create<Styles>({
   },
 
   disabled: {
-    opacity: 0.5,
+    backgroundColor: colors.disabled,
+    opacity: 1,
   },
 
   text: {
-    fontSize: 16,
-    fontWeight: "600",
+    fontSize: 28,
+    fontWeight: "700",
   },
 
   primaryText: {

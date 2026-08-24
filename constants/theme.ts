@@ -6,7 +6,8 @@ export const colors = {
   secondary: "#8B8CF0",
   softAccent: "#EEEFFF",
   mutedText: "#6B6D7A",
-  border: "#E4E4EC",
+  border: "#E2E2EA",
+  disabled: "#70727F",
 };
 
 export const spacing = {
@@ -23,21 +24,21 @@ export const spacing = {
 export const radius = {
   sm: 8,
   md: 12,
-  lg: 16,
+  lg: 18,
   xl: 24,
 };
 
 export const typography = {
   display: {
-    fontSize: 40,
+    fontSize: 48,
     fontWeight: "700" as const,
-    lineHeight: 48,
+    lineHeight: 58,
   },
 
   h1: {
-    fontSize: 32,
+    fontSize: 36,
     fontWeight: "700" as const,
-    lineHeight: 38,
+    lineHeight: 44,
   },
 
   h2: {
@@ -59,9 +60,9 @@ export const typography = {
   },
 
   body: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: "400" as const,
-    lineHeight: 24,
+    lineHeight: 32,
   },
 
   supporting: {

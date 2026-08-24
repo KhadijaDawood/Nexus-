@@ -1,0 +1,8 @@
+import React from "react";
+import { Image, SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
+import NexusButton from "../components/NexusButton";
+import { categories } from "../constants/discoveryContent";
+import { colors, typography } from "../constants/theme";
+type Props = { onContinue: () => void; onBack: () => void };
+export default function DiscoveryScreen({ onContinue, onBack }: Props) { return <SafeAreaView style={styles.safe}><ScrollView contentContainerStyle={styles.content}><Text onPress={onBack} style={styles.back}>← Back</Text><Image source={require("../assets/branding/nexus-wordmark.jpg")} style={styles.wordmark} resizeMode="contain" /><Text style={styles.title}>Your Discovery Journey</Text><Text style={styles.lead}>This journey explores eight parts of your experience.</Text>{categories.map((category, index) => <View key={category.name} style={styles.category}><Text style={styles.categoryName}>●  {String(index + 1).padStart(2, "0")}  {category.name}</Text><Text style={styles.prompt}>▏  {category.prompt}</Text></View>)}<NexusButton title="Begin My Discovery  →" onPress={onContinue} /></ScrollView></SafeAreaView>; }
+const styles = StyleSheet.create({ safe: { flex: 1, backgroundColor: colors.background }, content: { padding: 64, paddingTop: 30 }, back: { fontSize: 18, color: colors.mutedText }, wordmark: { width: 208, height: 68, marginTop: 4 }, title: { ...typography.h1, marginTop: 220, marginBottom: 100, textAlign: "center", color: colors.deepInk }, lead: { fontSize: 20, lineHeight: 30, color: colors.deepInk, marginBottom: 28 }, category: { marginBottom: 18 }, categoryName: { fontSize: 20, color: colors.deepInk }, prompt: { marginTop: 12, marginLeft: 4, fontSize: 19, color: colors.deepInk }, });

@@ -1,0 +1,8 @@
+import React from "react";
+import { Image, SafeAreaView, ScrollView, StyleSheet, Text } from "react-native";
+import NexusButton from "../components/NexusButton";
+import { Category } from "../constants/discoveryContent";
+import { colors, typography } from "../constants/theme";
+type Props = { category: Category; index: number; onContinue: () => void; onBack: () => void };
+export default function CategoryIntroScreen({ category, index, onContinue, onBack }: Props) { return <SafeAreaView style={styles.safe}><ScrollView contentContainerStyle={styles.content}><Text onPress={onBack} style={styles.back}>← Back</Text><Image source={require("../assets/branding/nexus-wordmark.jpg")} style={styles.wordmark} resizeMode="contain" /><Text style={styles.number}>{String(index + 1).padStart(2, "0")}</Text><Text style={styles.category}>{category.name.toUpperCase()}</Text><Text style={styles.prompt}>{category.prompt}</Text><Text style={styles.description}>{category.description}</Text><NexusButton title={`Begin ${category.name}  →`} onPress={onContinue} /></ScrollView></SafeAreaView>; }
+const styles = StyleSheet.create({ safe: { flex: 1, backgroundColor: colors.background }, content: { flexGrow: 1, padding: 64, paddingTop: 30 }, back: { fontSize: 18, color: colors.mutedText }, wordmark: { width: 208, height: 68 }, number: { marginTop: 190, fontSize: 27, fontWeight: "600", color: colors.primary }, category: { ...typography.display, marginTop: 110, color: colors.deepInk }, prompt: { marginTop: 110, fontSize: 27, fontWeight: "700", color: colors.deepInk }, description: { marginTop: 100, marginBottom: 80, fontSize: 18, lineHeight: 25, color: colors.mutedText }, });
