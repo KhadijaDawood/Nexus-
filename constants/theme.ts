@@ -6,7 +6,7 @@ export const colors = {
   secondary: "#8B8CF0",
   softAccent: "#EEEFFF",
   mutedText: "#6B6D7A",
-  border: "#E2E2EA",
+  border: "#E4E4EC",
   disabled: "#70727F",
 };
 
@@ -22,58 +22,61 @@ export const spacing = {
 };
 
 export const radius = {
-  sm: 8,
-  md: 12,
-  lg: 18,
-  xl: 24,
+  card: 16,
+  button: 14,
 };
 
 export const typography = {
   display: {
-    fontSize: 48,
+    fontSize: 40,
     fontWeight: "700" as const,
-    lineHeight: 58,
   },
 
   h1: {
-    fontSize: 36,
+    fontSize: 32,
     fontWeight: "700" as const,
-    lineHeight: 44,
   },
 
   h2: {
     fontSize: 24,
     fontWeight: "600" as const,
-    lineHeight: 29,
   },
 
   h3: {
     fontSize: 20,
     fontWeight: "600" as const,
-    lineHeight: 24,
   },
 
   question: {
     fontSize: 20,
     fontWeight: "500" as const,
-    lineHeight: 28,
   },
 
   body: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: "400" as const,
-    lineHeight: 32,
   },
 
   supporting: {
     fontSize: 14,
     fontWeight: "400" as const,
-    lineHeight: 20,
+  },
+
+  button: {
+    fontSize: 16,
+    fontWeight: "500" as const,
   },
 
   caption: {
     fontSize: 12,
     fontWeight: "500" as const,
-    lineHeight: 16,
   },
+};
+
+export const layout = {
+  mobileHorizontalPadding: 24,
+  cardPadding: 24,
+  buttonHeight: 52,
+  buttonRadius: 14,
+  borderWidth: 1,
 };

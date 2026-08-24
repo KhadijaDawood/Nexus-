@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     width: "100%",
     padding: 24,
     backgroundColor: colors.white,
-    borderRadius: radius.lg,
+    borderRadius: radius.card,
   },
 
   title: {

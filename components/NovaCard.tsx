@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     padding: 20,
     backgroundColor: colors.white,
-    borderRadius: radius.lg,
+    borderRadius: radius.card,
   },
 
   avatar: {

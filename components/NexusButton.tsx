@@ -63,7 +63,7 @@ const styles = StyleSheet.create<Styles>({
     minHeight: 92,
     minWidth: 310,
     paddingHorizontal: 32,
-    borderRadius: radius.lg,
+    borderRadius: radius.button,
     alignItems: "center",
     justifyContent: "center",
   },
