@@ -33,7 +33,7 @@ export default function IntroductionScreen({ pages, onComplete }: Props) {
       event.nativeEvent.contentOffset.x / width
     );
 
-    console.log("INTRO PAGE:", page, "OFFSET:", event.nativeEvent.contentOffset.x); setCurrentPage(page);
+    setCurrentPage(page);
 
     if (page === pages.length - 1) {
       onComplete();
@@ -49,7 +49,7 @@ export default function IntroductionScreen({ pages, onComplete }: Props) {
         horizontal
         pagingEnabled
         showsHorizontalScrollIndicator={false}
-        onScroll={handleScrollEnd} scrollEventThrottle={16}
+        onMomentumScrollEnd={handleScrollEnd}
         renderItem={({ item, index }) => (
           <View style={styles.page}>
             <Image
@@ -71,6 +71,14 @@ export default function IntroductionScreen({ pages, onComplete }: Props) {
               ))}
             </View>
 
+            {index === pages.length - 1 && (
+          <View style={styles.cta}>
+            <NexusButton
+              title="Continue"
+              onPress={onComplete}
+            />
+          </View>
+        )}
 
         <View style={styles.pagination}>
               {pages.map((_, dotIndex) => (

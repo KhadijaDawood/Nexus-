@@ -1,27 +1,16 @@
 import React from "react";
-import {
-  Image,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
-
+import { Image, SafeAreaView, StyleSheet, Text, View } from "react-native";
 import NexusButton from "../components/NexusButton";
-import NovaCard from "../components/NovaCard";
-import { colors } from "../constants/theme";
 
 type WelcomeScreenProps = {
   onBegin?: () => void;
 };
 
-export default function WelcomeScreen({
-  onBegin,
-}: WelcomeScreenProps) {
+export default function WelcomeScreen({ onBegin }: WelcomeScreenProps) {
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.content}>
-        <View style={styles.brandArea}>
+    <SafeAreaView style={styles.safeArea}>
+      <View style={styles.container}>
+        <View style={styles.topBrand}>
           <Image
             source={require("../assets/branding/nexus-symbol.jpg")}
             style={styles.symbol}
@@ -35,101 +24,100 @@ export default function WelcomeScreen({
           />
         </View>
 
-        <View style={styles.introduction}>
-          <Text style={styles.eyebrow}>
-            YOUR DISCOVERY STARTS HERE
+        <View style={styles.mainContent}>
+          <Text style={styles.title}>
+            Where Self-Awareness{"\n"}Becomes Direction
           </Text>
 
-          <Text style={styles.heading}>
-            Discover what makes you, you.
+          <Text style={styles.tagline}>
+            Your Signals. Your Patterns. Your Direction.
           </Text>
 
-          <Text style={styles.description}>
-            Nexus helps you explore your identity, strengths, interests,
-            values, personality, barriers, vision, and growth — and connect
-            them into a clearer picture of where you want to go.
-          </Text>
+          <View style={styles.buttonContainer}>
+            <NexusButton
+              title="Begin My Discovery →"
+              onPress={() => onBegin?.()}
+            />
+          </View>
         </View>
 
-        <NovaCard
-          message="There are no right or wrong answers. Take your time and answer honestly."
-        />
-
-        <View style={styles.action}>
-          <NexusButton
-            title="Begin My Discovery"
-            onPress={() => onBegin?.()}
-          />
-        </View>
+        <Text style={styles.footer}>
+          Your journey is yours.
+        </Text>
       </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: "#F8F7FF",
+  },
+
   container: {
     flex: 1,
-    backgroundColor: colors.background,
-  },
-
-  content: {
-    flex: 1,
+    backgroundColor: "#F8F7FF",
     paddingHorizontal: 24,
-    paddingVertical: 24,
+    paddingVertical: 28,
     justifyContent: "space-between",
+    alignItems: "center",
   },
 
-  brandArea: {
-    flexDirection: "row",
+  topBrand: {
     alignItems: "center",
-    gap: 10,
+    marginTop: 42,
   },
 
   symbol: {
-    width: 38,
-    height: 38,
+    width: 82,
+    height: 82,
+    marginBottom: 14,
   },
 
   wordmark: {
-    width: 110,
-    height: 38,
+    width: 112,
+    height: 34,
   },
 
-  introduction: {
-    alignItems: "center",
-    maxWidth: 600,
-    alignSelf: "center",
-  },
-
-  eyebrow: {
-    marginBottom: 14,
-    fontSize: 12,
-    fontWeight: "600",
-    letterSpacing: 1.5,
-    color: colors.primary,
-    textAlign: "center",
-  },
-
-  heading: {
-    marginBottom: 16,
-    fontSize: 34,
-    lineHeight: 42,
-    fontWeight: "700",
-    color: colors.deepInk,
-    textAlign: "center",
-  },
-
-  description: {
-    fontSize: 16,
-    lineHeight: 25,
-    color: colors.deepInk,
-    opacity: 0.75,
-    textAlign: "center",
-  },
-
-  action: {
+  mainContent: {
     width: "100%",
-    maxWidth: 500,
-    alignSelf: "center",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: -10,
+  },
+
+  title: {
+    maxWidth: 360,
+    textAlign: "center",
+    fontSize: 31,
+    lineHeight: 39,
+    fontWeight: "700",
+    color: "#111827",
+  },
+
+  tagline: {
+    marginTop: 42,
+    textAlign: "center",
+    fontSize: 10,
+    lineHeight: 16,
+    color: "#A5A2B3",
+    letterSpacing: 0.2,
+  },
+
+  buttonContainer: {
+      width: "100%",
+        maxWidth: 330,
+          marginTop: 132,
+            alignItems: "center",
+            },
+
+
+  footer: {
+    marginBottom: 22,
+    fontSize: 10,
+    lineHeight: 15,
+    color: "#A5A2B3",
+    textAlign: "center",
   },
 });

@@ -47,7 +47,14 @@ export default function App() {
         pages={introPages}
         onComplete={next}
       />
-    )
+    );
+  } else if (step === novaStep) {
+    screen = (
+      <NovaScreen
+        onContinue={next}
+        onBack={back}
+      />
+    );
   } else if (step === honestyStep) {
     screen = (
       <HonestyScreen

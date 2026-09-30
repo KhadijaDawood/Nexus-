@@ -85,16 +85,6 @@ export const introductionPages: IntroductionPage[] = [
     ]
   },
   {
-      title: "Meet Nova",
-        paragraphs: [
-            "You won't be doing the journey completely alone.",
-                "Nova is your AI companion throughout the experience.",
-                    "Nova can help you reflect, clarify your thoughts, ask deeper questions, and see another perspective when you need one."
-                      ],
-                        callout: "But Nova doesn't decide who you are.\nYou do."
-                        },
-
-  {
     title: "Begin with honesty",
     paragraphs: [
       "Take your time.",
@@ -102,8 +92,7 @@ export const introductionPages: IntroductionPage[] = [
       "We're not trying to create a better version of you.",
       "We're trying to understand the real one."
     ]
-  },
-
+  }
 ];
 
 export const categories: Category[] = [

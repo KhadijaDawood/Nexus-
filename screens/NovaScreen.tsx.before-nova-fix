@@ -7,32 +7,33 @@ import {
   Text,
   View,
 } from "react-native";
-
+import NexusButton from "../components/NexusButton";
 import { colors, typography } from "../constants/theme";
 
-export default function NovaScreen() {
+type Props = {
+  onContinue: () => void;
+  onBack: () => void;
+};
+
+export default function NovaScreen({ onContinue }: Props) {
   return (
     <SafeAreaView style={styles.safe}>
       <ScrollView
-        contentContainerStyle={styles.page}
+        contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}
       >
-        <Image
-          source={require("../assets/branding/nexus-wordmark.jpg")}
-          style={styles.wordmark}
-          resizeMode="contain"
-        />
+        <Text style={styles.wordmark}>NEXUS</Text>
 
-        <View style={styles.copy}>
+        <View style={styles.main}>
           <Text style={styles.title}>Meet Nova</Text>
 
           <Image
-            source={require("../design-references/nova/nova-view.jpg")}
+            source={require("../design-references/nova/13_20260818_162409_0012.png")}
             style={styles.novaImage}
             resizeMode="contain"
           />
 
-          <View style={styles.textBlock}>
+          <View style={styles.copy}>
             <Text style={styles.paragraph}>
               You won't be doing the journey completely alone.
             </Text>
@@ -46,6 +47,13 @@ export default function NovaScreen() {
               questions, and see another perspective when you need one.
             </Text>
           </View>
+
+          <View style={styles.action}>
+            <NexusButton
+              title={"But Nova doesn't decide who you are.\nYou do.."}
+              onPress={onContinue}
+            />
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -58,47 +66,68 @@ const styles = StyleSheet.create({
     backgroundColor: colors.background,
   },
 
-  page: {
+  content: {
     flexGrow: 1,
-    paddingHorizontal: 44,
+    paddingHorizontal: 36,
     paddingTop: 34,
-    paddingBottom: 28,
+    paddingBottom: 40,
   },
 
   wordmark: {
-    width: 104,
-    height: 34,
-    alignSelf: "flex-start",
+    fontSize: 26,
+    fontWeight: "800",
+    letterSpacing: -1,
+    color: colors.deepInk,
   },
 
-  copy: {
+  main: {
     flex: 1,
-    justifyContent: "center",
-    paddingVertical: 60,
+    alignItems: "center",
   },
 
   title: {
-    ...typography.h1,
+    ...typography.display,
     textAlign: "center",
     color: colors.deepInk,
-    marginBottom: 32,
+    marginBottom: 24,
   },
 
   novaImage: {
     width: 150,
     height: 150,
+    marginTop: 8,
     alignSelf: "center",
-    marginBottom: 32,
   },
 
-  textBlock: {
+  copy: {
     width: "100%",
+    marginTop: 18,
   },
 
   paragraph: {
-    fontSize: 18,
-    lineHeight: 29,
+    fontSize: 20,
+    lineHeight: 32,
     color: colors.deepInk,
-    marginBottom: 26,
+    marginBottom: 18,
+  },
+
+  attentionBlock: {
+    width: "100%",
+    marginTop: 36,
+    marginBottom: 28,
+    paddingVertical: 22,
+    paddingHorizontal: 24,
+    borderRadius: 18,
+    backgroundColor: colors.surface,
+    borderWidth: 1,
+    borderColor: colors.mutedText,
+  },
+
+attentionText: {
+    fontSize: 18,
+    lineHeight: 27,
+    fontWeight: "600",
+    textAlign: "center",
+    color: colors.deepInk,
   },
 });
